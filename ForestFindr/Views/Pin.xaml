@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ForestFindr.Pin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <ScaleTransform x:Name="PinScaleTransform" ScaleX="1" ScaleY="1" />
+        </Grid.RenderTransform>
+        <Image Width="48" Stretch="Uniform" x:Name="PinImage"></Image>
+        <Viewbox x:Name="marker" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" >
+            <Grid >
+
+                <Path x:Name="path8" Data="F1M329.269,305.8486C329.269,294.1316,319.771,284.6346,308.055,284.6346C296.339,284.6346,286.841,294.1316,286.841,305.8486C286.841,314.6766,292.235,322.2426,299.906,325.4356L308.252,478.3926L316.373,325.3676C323.954,322.1326,329.269,314.6146,329.269,305.8486" Fill="#FF81A43C" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Margin="23.5,24,28.072,2.242">
+
+                </Path>
+                <Path x:Name="path11" Data="F1M345.0664,268.8223C334.7904,258.5463,322.5584,253.4903,308.0394,253.4903C293.5244,253.4903,281.2894,258.5463,271.0134,268.8223C260.7374,279.0983,255.6804,291.3333,255.6804,305.8483C255.6804,320.3673,260.7374,332.5993,271.0134,342.8763C278.5354,350.3993,287.1384,355.0543,296.8884,357.0443L295.4024,329.8053C286.8824,325.2393,281.1104,316.2163,281.1104,305.8483C281.1104,290.9133,293.0614,278.7133,307.9964,278.7133C322.9334,278.7133,335.1324,290.9133,335.1324,305.8483C335.1324,316.1043,329.3644,325.0393,320.9244,329.6493L319.4734,356.9953C329.1084,354.9753,337.6164,350.3293,345.0664,342.8763C355.3424,332.5993,360.5624,320.3673,360.5624,305.8483C360.5624,291.3333,355.3424,279.0983,345.0664,268.8223" Fill="#FF24420E" Height="103.554" Stretch="Fill" UseLayoutRounding="False" Margin="-7,-7,-3.882,0" VerticalAlignment="Top">
+                </Path>
+            </Grid>
+
+        </Viewbox>
+
+        <Viewbox x:Name="markerTree" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" >
+            <Grid >
+                <Path x:Name="path14" Data="F1M251.4653,458.0117L222.3413,407.4627L243.2093,407.4627L180.5133,298.6427L117.8163,407.4627L138.6853,407.4627L109.5603,458.0117L163.2223,458.0117L163.2223,483.8017L197.8023,483.8017L197.8023,458.0117z" Fill="#FF81A43C" Height="185.159" Canvas.Left="109.56" Stretch="Fill" Canvas.Top="298.921" Width="141.905" RenderTransformOrigin="0.5,1">
+                   
+                </Path>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

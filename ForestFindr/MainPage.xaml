@@ -1,0 +1,228 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:views="clr-namespace:ForestFindr.Views"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    x:Class="ForestFindr.MainPage"
+    mc:Ignorable="d"
+    d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+        <Style x:Key="ToggleButtonExpand" TargetType="ToggleButton">
+            <Setter Property="Background" Value="#FF1F3B53"/>
+            <Setter Property="Foreground" Value="#FF000000"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FF617584" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <!--<Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                        <DoubleAnimation Duration="0" To="16" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <ColorAnimation Duration="0" To="#FF525252" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="90" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Direction)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="10" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="20" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                    </Storyboard>-->
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <!--<Storyboard>
+                                    <DoubleAnimation Duration="0:0:0.6" To="-190" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="contentPresenter" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="180" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Direction)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+                                        <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="regularPolygon" d:IsOptimized="True"/>
+
+                                    </Storyboard>-->
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="Background" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                <Grid Margin="1">
+                                    <Border x:Name="BackgroundAnimation" Background="{x:Null}" Opacity="0" d:IsHidden="True"/>
+                                    <Rectangle x:Name="BackgroundGradient"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <ContentPresenter.Projection>
+                                    <PlaneProjection/>
+                                </ContentPresenter.Projection>
+                                <Grid>
+                                  
+                                    <Image Margin="0" Stretch="UniformToFill" Source="Assets/btn_expand.png" Width="23" Height="77"/>
+                                </Grid>
+
+
+                            </ContentPresenter>
+
+
+                            <Rectangle x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3"/>
+                            <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="0" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="1"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+        <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
+		<Grid.Background>
+            <ImageBrush ImageSource="Assets/backgroundpng.png"/>
+		</Grid.Background>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="FilterStates">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0:0:0.2">
+						<VisualTransition.GeneratedEasingFunction>
+							<ExponentialEase EasingMode="EaseIn"/>
+						</VisualTransition.GeneratedEasingFunction>
+					</VisualTransition>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="Default"/>
+				<VisualState x:Name="FilterOpen">
+					<Storyboard>
+						<DoubleAnimation Duration="0:0:0.2" To="99" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.BorderThickness)" Storyboard.TargetName="ContentFrame">
+							<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+								<DiscreteObjectKeyFrame.Value>
+									<Thickness>1</Thickness>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+        <Border x:Name="LinksBorder" BorderThickness="0" Height="100" Grid.Row="0" 
+			HorizontalAlignment="Stretch" VerticalAlignment="Top" Opacity="0.925" Background="#D6132F00">
+        </Border>
+    
+        <Border x:Name="ContentBorder" Grid.Row="0"  Grid.RowSpan="3"
+                Margin="160,98,160,0" >
+			<navigation:Frame x:Name="ContentFrame" 
+				Style="{StaticResource NavContentFrameStyle}" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed"/>
+		</Border>
+
+        <HyperlinkButton  VerticalAlignment="Top" NavigateUri="http://contest.silverlightshow.net/Gallery.aspx" TargetName="_blank"  HorizontalAlignment="Right" Margin="10,10,110,10">
+            <StackPanel>
+                <TextBlock Text="Vote for this entry"  FontFamily="/ForestFindr;component/Fonts/Fonts.zip#H74_TheBlackBureau" Foreground="White" ></TextBlock>
+            <Image Source="http://www.silverlightshow.net/Storage/eco_badge_130.png" Width="100" Margin="0,4,0,0" Height="60" ></Image>
+        </StackPanel>
+        </HyperlinkButton>
+        <Image x:Name="Logo" Margin="70,40,0,0" Source="Assets/logo.png" Stretch="Fill" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top">
+            <Image.Effect>
+                <DropShadowEffect Color="#D6132F00" BlurRadius="20" Direction="-90" Opacity="0.75" ShadowDepth="5"/>
+            </Image.Effect>
+        </Image>
+
+        <StackPanel Orientation="Horizontal" Margin="290,0,0,0" VerticalAlignment="Top">
+            <HyperlinkButton  NavigateUri="Home" TargetName="ContentFrame" >
+                <Canvas x:Name="HOME" Height="117" Canvas.Left="307" Canvas.Top="-2" Width="155">
+                    <Path x:Name="Shape_2_copy_2" Data="F1M1.5,1C1.5,1 154,1 154,1 154,1 154,116 154,116 154,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF89FF00" Height="117" Canvas.Left="0" Canvas.Top="0" Width="155"/>
+                    <Path x:Name="Shape_2_copy_7" Data="F1M1.5,1C1.5,1 32,1 32,1 32,1 32,116 32,116 32,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF234F25" Height="117" Canvas.Left="61" Canvas.Top="0" Width="33"/>
+                    <Image x:Name="Layer_12_copy" Height="114" Canvas.Left="1" Source="Assets/Layer12.png" Canvas.Top="2" Width="153"/>
+                    <TextBlock x:Name="HOME1" Foreground="#FFFFFFFF" FontSize="20" FontFamily="/ForestFindr;component/Fonts/Fonts.zip#H74_TheBlackBureau" LineStackingStrategy="BlockLineHeight" Canvas.Left="43" LineHeight="20" TextAlignment="Left" TextWrapping="Wrap" Text="HOME" Canvas.Top="81.4" Opacity="1"/>
+                </Canvas>
+            </HyperlinkButton>
+            <HyperlinkButton NavigateUri="Resources" TargetName="ContentFrame">
+                <Canvas x:Name="RESOURCES" Height="117" Canvas.Left="470" Canvas.Top="-2" Width="155">
+                    <Path x:Name="Shape_2_copy_3" Data="F1M1.5,1C1.5,1 154,1 154,1 154,1 154,116 154,116 154,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF89FF00" Height="117" Canvas.Left="0" Canvas.Top="0" Width="155"/>
+                    <Path x:Name="Shape_2_copy_6" Data="F1M1.5,1C1.5,1 32,1 32,1 32,1 32,116 32,116 32,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF234F25" Height="117" Canvas.Left="61" Canvas.Top="0" Width="33"/>
+                    <Image x:Name="Layer_12_copy_2" Height="114" Canvas.Left="2" Source="Assets/Layer12.png" Canvas.Top="2" Width="153"/>
+                    <TextBlock x:Name="Resources" Foreground="#FFFFFFFF" FontSize="20" FontFamily="/ForestFindr;component/Fonts/Fonts.zip#H74_TheBlackBureau" LineStackingStrategy="BlockLineHeight" Canvas.Left="13" LineHeight="20" TextAlignment="Left" TextWrapping="Wrap" Text="Resources" Canvas.Top="81.4" Opacity="1"/>
+                </Canvas>
+            </HyperlinkButton>
+            <HyperlinkButton NavigateUri="About" TargetName="ContentFrame">
+                    <Canvas x:Name="ABOUT" Height="117" Canvas.Top="-2" Width="155">
+                        <Path x:Name="Shape_2_copy_4" Data="F1M1.5,1C1.5,1 154,1 154,1 154,1 154,116 154,116 154,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF89FF00" Height="117" Canvas.Left="0" Canvas.Top="0" Width="155"/>
+                        <Path x:Name="Shape_2_copy_5" Data="F1M1.5,1C1.5,1 32,1 32,1 32,1 32,116 32,116 32,116 1.5,116 1.5,116 1.5,116 1.5,1 1.5,1z" Fill="#FF234F25" Height="117" Canvas.Left="61" Canvas.Top="0" Width="33"/>
+                        <Image x:Name="Layer_12_copy_3" Height="114" Canvas.Left="2" Source="Assets/Layer12.png" Canvas.Top="2" Width="153"/>
+                        <TextBlock x:Name="ABOUT1" Foreground="#FFFFFFFF" FontSize="20" FontFamily="/ForestFindr;component/Fonts/Fonts.zip#H74_TheBlackBureau" LineStackingStrategy="BlockLineHeight" Canvas.Left="39" LineHeight="20" TextAlignment="Left" TextWrapping="Wrap" Text="ABOUT" Canvas.Top="81.4" Opacity="1"/>
+                    </Canvas>
+                </HyperlinkButton>
+        </StackPanel>
+
+        <Grid Margin="0,0,0,0" >
+            
+			<Grid.Clip>
+				<RectangleGeometry Rect="0, 99, 1600, 600"/>
+			</Grid.Clip>
+            
+			<Grid x:Name="grid" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Height="420" Width="400">
+				<Grid.RenderTransform>
+					<CompositeTransform TranslateY="-200"/>
+				</Grid.RenderTransform>
+				<StackPanel>
+					<!--<StackPanel.Effect>
+						<DropShadowEffect BlurRadius="20" ShadowDepth="10" Direction="-90" Color="Black" Opacity="0.8"/>
+					</StackPanel.Effect>-->
+					<views:FilterView x:Name="filterView" Width="400"  />
+                    <ToggleButton Width="71" Height="91" Margin="165,-80,165,0" Cursor="Hand" Style="{StaticResource ToggleButtonExpand}" >
+                        <i:Interaction.Triggers>
+                        	<i:EventTrigger EventName="Checked">
+                        		<ei:GoToStateAction StateName="FilterOpen"/>
+                        	</i:EventTrigger>
+                        	<i:EventTrigger EventName="Unchecked">
+                        		<ei:GoToStateAction StateName="Default"/>
+                        	</i:EventTrigger>
+                        	<i:EventTrigger EventName="Loaded">
+                        		<ei:GoToStateAction StateName="Default"/>
+                        	</i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+                    </ToggleButton>
+                </StackPanel>
+
+               
+
+			</Grid>
+            </Grid>
+
+        <MediaElement x:Name="backgroundsound" Source="Assets/forestsounds.mp3" AutoPlay="True" Volume="8"   MediaEnded="backgroundsound_MediaEnded"  Visibility="Visible"></MediaElement>
+
+    </Grid>
+</UserControl>

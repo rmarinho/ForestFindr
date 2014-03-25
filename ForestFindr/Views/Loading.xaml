@@ -1,0 +1,256 @@
+﻿<UserControl x:Class="ForestFindr.Views.Loading"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Storyboard x:Name="Storyboard1" AutoReverse="True" RepeatBehavior="Forever">
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)" Storyboard.TargetName="path1" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)" Storyboard.TargetName="path2" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)" Storyboard.TargetName="path3" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)" Storyboard.TargetName="path4" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)" Storyboard.TargetName="path5" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path6" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path7" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="path8" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path9" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path10" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path11" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path12" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.LocalOffsetZ)" Storyboard.TargetName="path13" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="path14" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="path14" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.7" To="6" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="path15" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <BounceEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationX)" Storyboard.TargetName="path15">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.8" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="path16" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="path16" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.8" To="360" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="path17" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Viewbox x:Name="Layer_1" Height="380" Canvas.Left="0" Canvas.Top="-0.278" Width="841.89">
+            <Grid Height="380" Width="842" Margin="190,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+
+                <Path x:Name="path14" Data="F1M251.4653,458.0117L222.3413,407.4627L243.2093,407.4627L180.5133,298.6427L117.8163,407.4627L138.6853,407.4627L109.5603,458.0117L163.2223,458.0117L163.2223,483.8017L197.8023,483.8017L197.8023,458.0117z" Fill="#FF81A43C" Stretch="Fill" Width="141.905" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="-49.44,133,0,61.841">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.RenderTransform>
+                        <CompositeTransform ScaleY="0.2" ScaleX="0.2"/>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="path16" Data="F1M617.1943,250.8564L596.5073,214.9534L611.3283,214.9534L566.7983,137.6644L522.2693,214.9534L537.0923,214.9534L516.4033,250.8564z" Fill="#FF81A43C" Height="113.192" Stretch="Fill" RenderTransformOrigin="0.495,1.007" UseLayoutRounding="False" Margin="357.403,-27.962,383.806,0" VerticalAlignment="Top">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.RenderTransform>
+                        <CompositeTransform ScaleX="0.4" ScaleY="0.4"/>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="path6" Data="F1M255.6807,250.8564L232.0967,209.9244L248.9967,209.9244L198.2267,121.8064L147.4597,209.9244L164.3587,209.9244L140.7727,250.8564z" Fill="#FF81A43C" Height="129.05" Stretch="Fill" Width="114.908" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="-18.227,-43.891,0,0" VerticalAlignment="Top">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection RotationX="-4" LocalOffsetZ="-492"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path1" Data="F1M527.3223,428.1797C527.3223,422.7967,525.3673,417.9047,521.4513,413.5007C517.7013,409.0947,512.4803,406.9747,506.1193,406.9747L495.1913,406.9747L495.1913,449.2217L498.6173,449.2217C506.6073,449.3847,514.6033,449.5477,521.1273,443.0227C525.5293,438.6187,527.3223,433.3997,527.3223,428.1797 M545.4293,467.4907C534.5023,478.4187,521.4513,483.8017,506.1193,483.8017L460.6113,483.8017L460.6113,372.2347L506.1193,372.2347C521.4513,372.2347,534.5023,377.7777,545.4293,388.7067C556.3593,399.6357,561.9023,412.6847,561.9023,428.0167C561.9023,443.3487,556.3593,456.5607,545.4293,467.4907" Fill="#FF3F2500" Stretch="Fill" Width="101.291" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="301.756,0,0,61.92" Height="111.567" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection GlobalOffsetZ="-137"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path7" Data="F1M542.4707,324.2314L542.4707,298.8714L508.0527,298.8714L508.0527,290.5024L542.4707,290.5024L542.4707,255.7614L473.3107,255.7614L473.3107,358.3474L485.2147,367.3294L542.4707,367.3294L542.4707,332.7494L508.0527,332.7494L508.0527,324.2314z" Fill="#FF24420E" Stretch="Fill" Width="69.16" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="314.391,90.039,0,178.393">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path8" Data="F1M329.269,305.8486C329.269,294.1316,319.771,284.6346,308.055,284.6346C296.339,284.6346,286.841,294.1316,286.841,305.8486C286.841,314.6766,292.235,322.2426,299.906,325.4356L308.252,478.3926L316.373,325.3676C323.954,322.1326,329.269,314.6146,329.269,305.8486" Fill="#FF81A43C" Stretch="Fill" Width="42.428" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="128.055,118.913,0,67.329">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.RenderTransform>
+                        <CompositeTransform/>
+                    </Path.RenderTransform>
+                </Path>
+                <Path x:Name="path2" Data="F1M314.584,483.9648L338.437,483.9648L338.437,372.2348L320.513,372.2348z" Fill="#FF3F2500" Stretch="Fill" Width="23.853" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="155.584,0,0,61.757" Height="111.73" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection GlobalOffsetZ="-137"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path17" Data="F1M420.9727,425.8965L353.0367,372.2345L343.3327,372.2345L343.3327,483.9645L378.0747,483.9645L378.0747,436.0085L455.7167,497.5035L455.7167,372.2345L420.9727,372.2345z" Fill="#FF3F2500" Stretch="Fill" Width="112.384" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="184.525,0,0,48.085" Height="125.269" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path3" Data="F1M628.0859,431.7812C626.2129,432.8062,624.0629,433.3992,621.7699,433.3992L601.5429,433.3992L601.5429,406.9742L621.7699,406.9742C624.5219,406.9742,627.0679,407.8012,629.1739,409.2182C632.6839,411.5842,634.9789,415.5992,634.9789,420.1892C634.9789,425.1202,632.2029,429.5132,628.0859,431.7812 M647.9979,460.2642C648.0019,460.2642,648.0079,460.2602,648.0119,460.2552C649.3129,459.3872,650.5859,458.4502,651.8259,457.4372C651.8689,457.4002,651.9179,457.3682,651.9629,457.3302C653.2399,456.2812,654.4879,455.1572,655.6949,453.9492C658.0199,451.6262,660.0609,449.1772,661.8109,446.6112C667.0629,438.9062,669.7229,430.0962,669.7229,420.1892L669.7229,420.1842C669.7229,415.2312,669.0589,410.5292,667.7359,406.0972C665.5309,398.7102,661.5059,392.0672,655.6949,386.2602C646.3989,376.9642,634.9789,372.2342,621.7699,372.2342L566.7989,372.2342L566.7989,445.0252L566.7989,483.9602L566.7989,483.9652L601.5429,483.9652L601.5429,467.9792L622.7339,483.8832L679.2989,483.8832z" Fill="#FF3F2500" Stretch="Fill" UseLayoutRounding="False" Margin="407.799,0,321.701,61.757" Height="111.731" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection GlobalOffsetZ="-137"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path9" Data="F1M426.748,315.2275C424.873,316.2525,422.723,316.8455,420.429,316.8455L400.203,316.8455L400.203,290.4215L420.429,290.4215C423.182,290.4215,425.728,291.2475,427.834,292.6645C431.346,295.0295,433.641,299.0455,433.641,303.6355C433.641,308.5655,430.865,312.9595,426.748,315.2275 M446.66,343.7105C446.664,343.7105,446.67,343.7065,446.672,343.7015C447.975,342.8335,449.248,341.8965,450.484,340.8835C450.531,340.8465,450.578,340.8145,450.625,340.7765C451.902,339.7275,453.148,338.6035,454.357,337.3945C456.68,335.0725,458.721,332.6235,460.471,330.0575C465.725,322.3515,468.383,313.5425,468.383,303.6355L468.383,303.6305C468.383,298.6775,467.721,293.9755,466.396,289.5445C464.193,282.1555,460.168,275.5135,454.357,269.7065C445.061,260.4105,433.641,255.6805,420.429,255.6805L365.461,255.6805L365.461,328.4715L365.461,367.4065L365.461,367.4115L400.203,367.4115L400.203,351.4255L421.397,367.3295L477.959,367.3295z" Fill="#FF24420E" Stretch="Fill" Width="112.498" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="206.71,89.958,0,178.311">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path4" Data="F1M234.1226,372.0703L252.7506,404.4003L264.0586,404.4003L264.0586,412.9293L235.3586,412.9293L254.1076,445.4703L264.0586,445.4703L264.0586,483.9653L298.9636,483.9653L298.9636,372.0703z" Fill="#FF3F2500" Stretch="Fill" Width="64.841" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="75.123,0,0,61.757" Height="111.895" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection GlobalOffsetZ="-137"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path10" Data="F1M248.4941,297.2231L230.3631,297.2231L230.3631,288.6941L250.2231,288.6941C252.7811,279.8201,257.4301,271.8321,264.2411,264.6641L259.4951,256.4291L195.6211,256.4291L195.6211,306.7141L230.3631,367.0161L230.3631,329.6661L252.5361,329.6661C249.4211,322.4101,247.8641,314.5131,247.8641,305.9121C247.8641,302.9221,248.1151,300.0461,248.4941,297.2231" Fill="#FF24420E" Stretch="Fill" Width="68.62" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="36.621,90.707,0,178.706">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path11" Data="F1M345.0664,268.8223C334.7904,258.5463,322.5584,253.4903,308.0394,253.4903C293.5244,253.4903,281.2894,258.5463,271.0134,268.8223C260.7374,279.0983,255.6804,291.3333,255.6804,305.8483C255.6804,320.3673,260.7374,332.5993,271.0134,342.8763C278.5354,350.3993,287.1384,355.0543,296.8884,357.0443L295.4024,329.8053C286.8824,325.2393,281.1104,316.2163,281.1104,305.8483C281.1104,290.9133,293.0614,278.7133,307.9964,278.7133C322.9334,278.7133,335.1324,290.9133,335.1324,305.8483C335.1324,316.1043,329.3644,325.0393,320.9244,329.6493L319.4734,356.9953C329.1084,354.9753,337.6164,350.3293,345.0664,342.8763C355.3424,332.5993,360.5624,320.3673,360.5624,305.8483C360.5624,291.3333,355.3424,279.0983,345.0664,268.8223" Fill="#FF24420E" Stretch="Fill" Width="104.882" UseLayoutRounding="False" HorizontalAlignment="Left" Margin="96.68,87.768,0,188.678">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path12" Data="F1M611.8457,296.0889L620.0737,281.8099C612.4277,275.7739,603.7057,272.7099,594.0467,272.7099C591.5817,272.7099,589.6487,271.8449,587.9687,269.9869C586.2167,268.0489,585.3667,265.7969,585.3667,263.1039C585.3667,260.4429,586.2557,258.2139,588.0937,256.2849C588.2847,256.0849,588.4997,255.9399,588.6997,255.7619L549.1247,255.7619C548.7657,258.1479,548.5347,260.5839,548.5347,263.1039C548.5347,275.4309,552.7027,286.2489,560.9217,295.2579C569.1837,304.3259,579.2757,308.9429,590.9237,308.9869C594.2027,309.3059,596.9077,310.6069,599.1837,312.9659C601.4437,315.3119,602.5447,318.0279,602.5447,321.2769C602.5447,324.6469,601.4157,327.4569,599.0957,329.8549C596.8047,332.2269,594.0037,333.3789,590.5317,333.3789C588.1527,333.3789,585.9907,332.6909,583.9217,331.2759C581.8087,329.8309,580.3687,328.1829,579.5217,326.2439L577.9177,322.5649L568.9097,327.9829L569.0347,328.2379L559.6977,334.7869L555.0977,337.8569L552.1977,339.9439L552.2347,340.0019L547.3637,343.5549L549.0487,346.3199C553.3927,353.4589,559.3227,359.2529,566.6717,363.5319C574.0567,367.8429,582.1527,370.0239,590.7327,370.0239C604.0427,370.0239,615.5727,365.2239,624.9977,355.7659C634.4177,346.3019,639.1937,334.7299,639.1937,321.3649C639.1937,312.0669,636.9527,303.6079,632.5367,296.0889z" Fill="#FF24420E" Stretch="Fill" UseLayoutRounding="False" Margin="388.364,90.171,361.806,175.567">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path13" Data="F1M680.5967,326.9131C679.1847,324.8141,678.3607,322.2751,678.3607,319.5301L678.3607,255.7621L640.0357,255.7621L618.9747,292.1791L643.7237,292.1791L643.7237,319.5301C643.7237,332.7031,648.4387,344.0881,657.7057,353.3571C663.4967,359.1501,670.1197,363.1641,677.4877,365.3611C681.6847,366.6151,686.1317,367.2671,700.4277,367.3291L700.4277,332.6561C686.5357,332.4251,682.8267,330.2251,680.5967,326.9131" Fill="#FF24420E" Stretch="Fill" Width="81.453" UseLayoutRounding="False" HorizontalAlignment="Right" Margin="0,90.04,300.346,178.393">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection LocalOffsetZ="-200"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path5" Data="F1M700.4277,430.2227C685.6077,430.2227,673.5977,442.2347,673.5977,457.0527C673.5977,471.8697,685.6077,483.8827,700.4277,483.8827z" Fill="#FF3F2500" Stretch="Fill" Width="26.83" UseLayoutRounding="False" HorizontalAlignment="Right" Margin="0,0,300.573,61.839" Height="53.66" VerticalAlignment="Bottom">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection GlobalOffsetZ="-137"/>
+                    </Path.Projection>
+                </Path>
+                <Path x:Name="path15" Data="F1M756.9434,389.5898L782.6974,389.5898L705.3234,255.2918L705.3224,255.2948L705.3224,483.8018L726.6604,483.8018L726.6604,451.9738L792.8874,451.9738z" Fill="#FF81A43C" Stretch="Fill" Width="87.565" RenderTransformOrigin="-0.015,0.498" UseLayoutRounding="False" HorizontalAlignment="Right" Margin="0,89.57,208.113,61.92">
+                    <Path.Effect>
+                        <DropShadowEffect Direction="316" BlurRadius="20" ShadowDepth="11" Opacity="0.85"/>
+                    </Path.Effect>
+                    <Path.Projection>
+                        <PlaneProjection RotationY="-39.5"/>
+                    </Path.Projection>
+                </Path>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

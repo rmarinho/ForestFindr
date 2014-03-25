@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForestFindr.Web", "ForestFindr.Web\ForestFindr.Web.csproj", "{8979CA60-0536-40D3-A409-CE91F9B5811D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForestFindr", "ForestFindr\ForestFindr.csproj", "{EB4759D5-1598-40D1-A670-D6E55D26604F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8979CA60-0536-40D3-A409-CE91F9B5811D} = {8979CA60-0536-40D3-A409-CE91F9B5811D}
+		{8979CA60-0536-40D3-A409-CE91F9B5811D} = {8979CA60-0536-40D3-A409-CE91F9B5811D}
+		{8979CA60-0536-40D3-A409-CE91F9B5811D} = {8979CA60-0536-40D3-A409-CE91F9B5811D}
+		{8979CA60-0536-40D3-A409-CE91F9B5811D} = {8979CA60-0536-40D3-A409-CE91F9B5811D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramioNet", "Panoramio\PanoramioNet.csproj", "{852E4DC6-DA1E-4241-AC6A-E43CC3119700}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "ForestFindr.Azure", "ForestFindr.Azure\ForestFindr.Azure.ccproj", "{9513D49C-09A8-4377-999A-0022E2F10C34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8979CA60-0536-40D3-A409-CE91F9B5811D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8979CA60-0536-40D3-A409-CE91F9B5811D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8979CA60-0536-40D3-A409-CE91F9B5811D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8979CA60-0536-40D3-A409-CE91F9B5811D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4759D5-1598-40D1-A670-D6E55D26604F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4759D5-1598-40D1-A670-D6E55D26604F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4759D5-1598-40D1-A670-D6E55D26604F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4759D5-1598-40D1-A670-D6E55D26604F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852E4DC6-DA1E-4241-AC6A-E43CC3119700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852E4DC6-DA1E-4241-AC6A-E43CC3119700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852E4DC6-DA1E-4241-AC6A-E43CC3119700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852E4DC6-DA1E-4241-AC6A-E43CC3119700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9513D49C-09A8-4377-999A-0022E2F10C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9513D49C-09A8-4377-999A-0022E2F10C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9513D49C-09A8-4377-999A-0022E2F10C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9513D49C-09A8-4377-999A-0022E2F10C34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,208 @@
+﻿<UserControl
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:ForestFindr.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+ 	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:controls="clr-namespace:ForestFindr.Controls"
+ 	helpers:StateManager.VisualStateProperty="{Binding VisualStateName}" 
+    x:Class="ForestFindr.Views.PhotosView"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <DataTemplate x:Key="PhotoTemplate">
+            <StackPanel Margin="5">
+        		<Image Source="{Binding PhotoUrl}" Stretch="UniformToFill" Height="100"/>
+        	</StackPanel>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="ColorListItemsPanelTemplate">
+            
+            <toolkit:WrapPanel Orientation="Horizontal">
+                <i:Interaction.Behaviors>
+                    <ei:FluidMoveBehavior AppliesTo="Children" Duration="0:0:0.75">
+                        <ei:FluidMoveBehavior.EaseX>
+                            <ElasticEase EasingMode="EaseOut" Oscillations="2" Springiness="8"/>
+                        </ei:FluidMoveBehavior.EaseX>
+                        <ei:FluidMoveBehavior.EaseY>
+                            <ElasticEase EasingMode="EaseOut" Oscillations="2" Springiness="8"/>
+                        </ei:FluidMoveBehavior.EaseY>
+                    </ei:FluidMoveBehavior>
+                </i:Interaction.Behaviors>
+            </toolkit:WrapPanel>
+        </ItemsPanelTemplate>
+
+        <Style x:Key="PerspectiveSwing" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Grid x:Name="grid" Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor">
+                                                <SplineDoubleKeyFrame KeyTime="0" Value=".35"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="contentPresenter">
+                                                <SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected"/>
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor2">
+                                                <SplineDoubleKeyFrame KeyTime="0" Value=".75"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisualElement">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="LayoutStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition To="AfterLoaded" GeneratedDuration="0:0:0.75">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <BounceEase EasingMode="EaseOut"/>
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                        <VisualTransition GeneratedDuration="0:0:0.15" From="Loaded"/>
+                                        <VisualTransition GeneratedDuration="0:0:0.15"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="BeforeLoaded">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.001" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="-95"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="AfterLoaded"/>
+                                    <VisualState x:Name="BeforeUnloaded">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.001" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="-95"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid.Projection>
+                                <PlaneProjection CenterOfRotationX="-0.1"/>
+                            </Grid.Projection>
+                            <Rectangle x:Name="fillColor" Fill="#FFBADDE9" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                            <Rectangle x:Name="fillColor2" Fill="#FFBADDE9" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                            <Rectangle x:Name="FocusVisualElement" RadiusY="1" RadiusX="1" Stroke="#FF6DBDD1" StrokeThickness="1" Visibility="Collapsed"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" >
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    			<LinearGradientBrush.RelativeTransform>
+    				<CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-49.399"/>
+    			</LinearGradientBrush.RelativeTransform>
+    			<GradientStop Color="Silver" Offset="0"/>
+    			<GradientStop Color="White" Offset="1"/>
+    			<GradientStop Color="#FFFAFAFA" Offset="0.289"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.3*"/>
+    		<ColumnDefinition Width="0.7*"/>
+    	</Grid.ColumnDefinitions>
+
+       
+        <VisualStateManager.VisualStateGroups>
+    	        <VisualStateGroup x:Name="PhotoStates">
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="0:0:2">
+                            <VisualTransition.GeneratedEasingFunction>
+                                <CubicEase EasingMode="EaseIn"/>
+                            </VisualTransition.GeneratedEasingFunction>
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                <VisualState x:Name="Default"/>
+                <VisualState x:Name="OpenPhotos">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(PathListBox.LayoutPaths)[0].(LayoutPath.Span)" Storyboard.TargetName="pathListBox" d:IsOptimized="True"/>
+                        </Storyboard>
+                    </VisualState>
+                <VisualState x:Name="ClosePhotos">
+                <Storyboard>
+                    <DoubleAnimation Duration="1.0:0:0" To="0" Storyboard.TargetProperty="(PathListBox.LayoutPaths)[0].(LayoutPath.Span)" Storyboard.TargetName="pathListBox" d:IsOptimized="True"/>
+                </Storyboard>
+            </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <ScrollViewer BorderThickness="0"   Margin="8" Grid.Column="0" Background="{x:Null}" BorderBrush="{x:Null}"  >
+            <controls:MetroContentControl>
+                <StackPanel >
+                <StackPanel Orientation="Horizontal">
+
+                    <Image Source="{Binding CurrentWikipediaResult.ImageUrl}"  Height="50"  Stretch="UniformToFill" Margin="2" />
+                    <TextBlock Text="{Binding CurrentArea.Name}"  FontSize="15"  TextWrapping="Wrap" Margin="2" />
+                    <TextBlock Text="{Binding CurrentArea.Country}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="2" />
+                    
+                </StackPanel>
+                    <TextBlock Text="{Binding Path=CurrentArea.Designation, StringFormat='Designation: \{0\}'}" TextWrapping="Wrap" Margin="2" />
+                    <TextBlock Text="{Binding Path=CurrentArea.Iucncat, StringFormat='IUCNCAT: \{0\}'}" TextWrapping="Wrap" Margin="2" />
+                    <TextBlock Text="{Binding Path=CurrentArea.RepArea, StringFormat='Area: \{0\}'}" TextWrapping="Wrap" Margin="2" />
+                    <HyperlinkButton Content="WikiPage" TargetName="_blank" NavigateUri="{Binding CurrentWikipediaResult.Url}" Margin="2"></HyperlinkButton>
+            <TextBlock Text="{Binding CurrentWikipediaResult.Description}" TextWrapping="Wrap" Margin="2" />
+        </StackPanel>
+            </controls:MetroContentControl>
+        </ScrollViewer>
+        <toolkit:BusyIndicator IsBusy="{Binding IsBusy}" Background="Transparent"  BusyContent="Loading photos" Grid.Column="1"  Margin="8" d:LayoutOverrides="GridBox" >
+            <controls:MetroContentControl>
+                <ListBox x:Name="pathListBox"   Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Disabled"  ItemsPanel="{StaticResource ColorListItemsPanelTemplate}" ItemContainerStyle="{StaticResource PerspectiveSwing}" 
+    			ItemsSource="{Binding Photos}" ItemTemplate="{StaticResource PhotoTemplate}" VerticalAlignment="Top"  HorizontalAlignment="Center" />
+            </controls:MetroContentControl>
+            <!-- Too much work moving to the next feature
+             ItemsPanel="{StaticResource ColorListItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource PerspectiveSwing}" 
+            <ec:PathListBox x:Name="pathListBox"
+                            ItemsSource="{Binding Photos}" ItemTemplate="{StaticResource PhotoTemplate}" VerticalAlignment="Top" Margin="30,0,30,30" HorizontalAlignment="Center">
+                <ec:PathListBox.LayoutPaths>
+                    <ec:LayoutPath SourceElement="{Binding ElementName=line}" Span="50" />
+                </ec:PathListBox.LayoutPaths>
+            </ec:PathListBox>-->
+         
+    	</toolkit:BusyIndicator>
+    </Grid>
+   
+</UserControl>

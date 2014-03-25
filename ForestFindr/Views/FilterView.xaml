@@ -1,0 +1,180 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	  x:Name="main"
+          xmlns:web="clr-namespace:ForestFindr.Web.Services"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  
+             x:Class="ForestFindr.Views.FilterView"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="400">
+   
+
+    <UserControl.Resources>
+        <!--<SolidColorBrush x:Key="DrawToolFillBrush" Color="#5582CAFF"/>-->
+        <SolidColorBrush x:Key="DrawToolFillBrush" Color="#5500FF00"/>
+        <SolidColorBrush x:Key="DrawToolStrokeBrush" Color="#FFFF0000"/>
+    </UserControl.Resources>
+
+    <Grid  Height="370" Width="270">
+        <Image Height="370" Width="270" Stretch="UniformToFill" Source="../Assets/backgroundShadow.png" ></Image>
+        <StackPanel x:Name="FilterPanel" Orientation="Vertical" Margin="10,0,10,10">
+        <riaControls:DomainDataSource AutoLoad="True"
+                                      QueryName="GetCountrys"
+                                      x:Name="dds" >
+            <riaControls:DomainDataSource.DomainContext>
+                <web:CountrysContext/>
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+       
+
+    
+            <Grid Height="350" Width="250" HorizontalAlignment="Center" >
+                <Border BorderThickness="20,0,20,20" Margin="0,0,0,40">
+                	<Border.BorderBrush>
+                		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                			<LinearGradientBrush.RelativeTransform>
+                				<CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-37.875"/>
+                			</LinearGradientBrush.RelativeTransform>
+                			<GradientStop Color="#FFD4D4D4"/>
+                			<GradientStop Color="#FFC6C6C6" Offset="1"/>
+                			<GradientStop Color="#FFF8F8F8" Offset="0.153"/>
+                			<GradientStop Color="#FFF7F7F7" Offset="0.867"/>
+                		</LinearGradientBrush>
+                	</Border.BorderBrush>
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFBABABA" Offset="1"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="WhiteSmoke" Offset="0.141"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                </Border>
+                	<toolkit:Accordion x:Name="filtersAccordion" SelectionChanged="Accordion_SelectionChanged" HorizontalAlignment="Stretch" BorderThickness="0"  Margin="30,0,30,105" Background="Transparent" SelectedIndex="3" VerticalAlignment="Stretch" >
+                <toolkit:AccordionItem x:Name="acRoute" BorderThickness="0,1,0,0"  Background="Transparent">
+                    <toolkit:AccordionItem.Header>
+                        <TextBlock Text="Route"  ToolTipService.ToolTip="Search forests near a route"  FontSize="18" Margin="0,0,0,5"></TextBlock>
+                    </toolkit:AccordionItem.Header>
+                       
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/> 
+                                <RowDefinition/>
+                                <RowDefinition/>
+                        </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="From: " Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="10"  />
+                        <TextBox x:Name="FromInput" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch" KeyDown="Input_KeyDown" ToolTipService.ToolTip="Insert from address" GotFocus="FromInput_GotFocus"   Text="Espinho, Aveiro, Portugal" FontSize="13" Margin="5,0,0,0"/>
+                            <TextBlock Text="To: " Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="11" />
+                        <TextBox x:Name="ToInput" Grid.Row="1" Grid.Column="1" KeyDown="Input_KeyDown" GotFocus="ToInput_GotFocus" ToolTipService.ToolTip="Insert to address" Text="Gerês, Portugal" FontSize="13" Margin="5,0,0,0"/>
+                        <TextBlock Text="Detour: " Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="11" />
+
+                        <Slider x:Name="BufferSlider1" Minimum="0"  ToolTipService.ToolTip="Set detour range" Grid.Column="1" Margin="5,0,5,0" Width="70" HorizontalAlignment="Left"  Grid.Row="2"  Maximum="200" Value="{Binding ElementName=main, Path=Rangedetour, Mode=TwoWay}" ValueChanged="BufferSlider_ValueChanged"/>
+                        <Button Content="Get Route" Grid.Row="2" Grid.Column="1" Click="Button_Click" Padding="0,6" Margin="79,0,0,0"/>
+                        <StackPanel Orientation="Horizontal"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock x:Name="BufferText1" Text="50" Margin="5"/>
+                        <TextBlock x:Name="BufferUnits1" Text="km" Margin="5"/>
+                        </StackPanel>
+                    </Grid>
+                        
+
+                			</toolkit:AccordionItem>
+                <toolkit:AccordionItem x:Name="acProximity"  Background="Transparent" BorderThickness="0,1,0,0">
+                    <toolkit:AccordionItem.Header >
+                        <TextBlock Text="Proximity"  ToolTipService.ToolTip="Search forests near some center point"  FontSize="18" Margin="0,0,0,5"></TextBlock>
+                    </toolkit:AccordionItem.Header>
+                    <Grid x:Name="ProximityGrid" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ToolTipService.ToolTip>
+                        <ToolTip Content="Draw point and move mouse to set radius to search"/>
+                    </ToolTipService.ToolTip>
+
+                    <CheckBox x:Name="Proximity" Grid.Column="0" Background="White" Click="Draw_RadioButton_Click"  VerticalAlignment="Center"/>
+                    <TextBlock Text="Proximity:" Grid.Column="1" Margin="5" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <Ellipse Width="30" Height="30" Grid.Column="2" Fill="{StaticResource DrawToolFillBrush}" Stroke="{StaticResource DrawToolStrokeBrush}" HorizontalAlignment="Left" Margin="18,0,0,0"/>
+                    <Ellipse Width="2" Height="2" Grid.Column="2" Fill="{StaticResource DrawToolStrokeBrush}" HorizontalAlignment="Center" />
+                </Grid>
+
+               
+							
+                			</toolkit:AccordionItem>
+                <toolkit:AccordionItem x:Name="acLine"  Background="Transparent" BorderThickness="0,1,0,0">
+                    <toolkit:AccordionItem.Header>
+                        <TextBlock Text="Line"  ToolTipService.ToolTip="Search forests near some line"    FontSize="18" Margin="0,0,0,5"></TextBlock>
+                    </toolkit:AccordionItem.Header>
+
+                    <Grid  x:Name="BufferGrid" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ToolTipService.ToolTip>
+                        <ToolTip Content="Draw one or more lines. Double click to end."/>
+                    </ToolTipService.ToolTip>
+                    <CheckBox x:Name="PolyBuffer" Grid.Column="0" Background="White" Click="Draw_RadioButton_Click" VerticalAlignment="Center" />
+                    <TextBlock Text="Detour:" Grid.Column="1" Margin="5" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <Polyline Grid.Column="2" Stroke="{StaticResource DrawToolFillBrush}" StrokeThickness="10" Margin="20,25,0,0"
+                                                                  StrokeEndLineCap="Round" StrokeStartLineCap="Round" 
+                                                                  Points="0,0 10,5 20,-5 30,5" />
+                    <Polyline Grid.Column="2" Stroke="{StaticResource DrawToolStrokeBrush}" StrokeThickness="2" Margin="20,25,0,0"
+                                                                  Points="0,0 10,5 20,-5 30,5" />
+                    <StackPanel x:Name="BufferAdj" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"  Visibility="Visible" Margin="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Detour"  Margin="5"/>
+                            <TextBlock x:Name="BufferText" Text="50" Margin="5"/>
+                            <TextBlock x:Name="BufferUnits" Text="km" Margin="5"/>
+                        </StackPanel>
+                            <Slider x:Name="BufferSlider" Minimum="0"  Maximum="200" Value="{Binding ElementName=main, Path=Rangedetour, Mode=TwoWay}" ValueChanged="BufferSlider_ValueChanged"/>
+                    </StackPanel>
+                </Grid>
+				</toolkit:AccordionItem>
+                <toolkit:AccordionItem  x:Name="acCountry" BorderThickness="0,1,0,0" Background="Transparent">
+                    <toolkit:AccordionItem.Header>
+                        <TextBlock Text="Country"  ToolTipService.ToolTip="Search forests in a country"   FontSize="18" Margin="0,0,0,5"></TextBlock>
+                    </toolkit:AccordionItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="15"  Text="Country name:"/>
+                        <sdk:AutoCompleteBox  x:Name="filter"
+                    FilterMode="StartsWith"
+                                              SelectedItem="{Binding Mode=TwoWay, ElementName=main, Path=Selectedcountry}"
+                    MinimumPrefixLength="2"
+                    MaxDropDownHeight="150"      
+                 
+                    ItemsSource="{Binding Data, ElementName=dds}"
+                    ValueMemberBinding="{Binding name}"
+                    Width="150" Height="25" VerticalAlignment="Top"                    
+                    SelectionChanged="filter_SelectionChanged" Margin="5,0,0,0"
+                    >
+                            <sdk:AutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding name}"/>
+                                </DataTemplate>
+                            </sdk:AutoCompleteBox.ItemTemplate>
+                        </sdk:AutoCompleteBox>
+
+                    </StackPanel>
+					</toolkit:AccordionItem>
+                	</toolkit:Accordion>
+
+            <Button Content="Find Forest" HorizontalAlignment="Center" ToolTipService.ToolTip="Search forests"  VerticalAlignment="Bottom" Margin="0,0,0,70" Click="Button_Click_1"></Button>
+            </Grid>
+       
+    </StackPanel>
+    </Grid>
+</UserControl>

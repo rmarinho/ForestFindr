@@ -1,0 +1,70 @@
+﻿<navigation:Page x:Class="ForestFindr.Views.Resources" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+                  xmlns:controls="clr-namespace:ForestFindr.Controls"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Resources Page">
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,20">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="85" Direction="270" ShadowDepth="9"/>
+        </Grid.Effect>
+        <Grid  Grid.Row="0" >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-33.69"/>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFB3B3B3" Offset="0.008"/>
+                    <GradientStop Color="#FFEAEAEA" Offset="0.239"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.383"/>
+                    <GradientStop Color="#FFF2F2F2" Offset="0.565"/>
+                    <GradientStop Color="White" Offset="0.747"/>
+                    <GradientStop Color="#FFB0B0B0" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <controls:MetroContentControl>
+                <ScrollViewer  Background="Transparent" BorderThickness="0" BorderBrush="Transparent"    Margin="100,50,70,30">
+                    <StackPanel  >
+                        <TextBlock Text="Resources"  Style="{StaticResource HeaderTextStyle}" ></TextBlock>
+                        <TextBlock Text="The data and information shared in ForestFindr are from this sources:"   Margin="0,10,10,10" ></TextBlock>
+                        <Grid HorizontalAlignment="Left" Margin="20,10,20,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0"  Margin="5" Source="http://cmsdata.iucn.org/img/original/protectedplanet_logo.jpg" Width="100" Grid.Column="0"></Image>
+                            <HyperlinkButton Grid.Row="0"  VerticalAlignment="Center" Margin="5,0,0,0" NavigateUri="http://www.protectedplanet.net"  Grid.Column="1" TargetName="_blank"  Content="Protected Planet" FontSize="18"></HyperlinkButton>
+
+
+                            <Image Grid.Row="1"  Margin="5" Source="http://www.fratel.com/24/images/stories/projectos/panoramio-logo.jpg" Width="100" Grid.Column="0"></Image>
+                            <HyperlinkButton Grid.Row="1"  VerticalAlignment="Center" Margin="5,0,0,0" NavigateUri="http://www.panoramio.com/"  Grid.Column="1" TargetName="_blank"  Content="Panoramio" FontSize="18"></HyperlinkButton>
+
+                            <Image Grid.Row="1" Margin="5" Source="http://www.fratel.com/24/images/stories/projectos/panoramio-logo.jpg" Width="100" Grid.Column="0"></Image>
+                            <HyperlinkButton Grid.Row="1"  VerticalAlignment="Center" Margin="5,0,0,0" NavigateUri="http://www.panoramio.com/"  Grid.Column="1" TargetName="_blank"  Content="Panoramio" FontSize="18"></HyperlinkButton>
+
+                            <Image Grid.Row="2"  Margin="5" Source="http://www.gfunchal.com.br/wp-content/uploads/2009/01/flickr-logo.jpg" Width="100" Grid.Column="0"></Image>
+                            <HyperlinkButton Grid.Row="2"  VerticalAlignment="Center" Margin="5,0,0,0" NavigateUri="http://www.flickr.com/"  Grid.Column="1" TargetName="_blank"  Content="Flickr" FontSize="18"></HyperlinkButton>
+
+                            <Image Grid.Row="3"  Margin="5" Source="http://www.adrianorissi.oay.com.br/images/wikipedia-logo.png" Width="100" Grid.Column="0"></Image>
+                            <HyperlinkButton Grid.Row="3"  VerticalAlignment="Center" Margin="5,0,0,0" NavigateUri="http://wikipedia.org/"  Grid.Column="1" TargetName="_blank"  Content="Wikipedia" FontSize="18"></HyperlinkButton>
+
+
+                        </Grid>
+                    </StackPanel>
+
+                </ScrollViewer>
+            </controls:MetroContentControl>
+        </Grid>
+    </Grid>
+</navigation:Page>

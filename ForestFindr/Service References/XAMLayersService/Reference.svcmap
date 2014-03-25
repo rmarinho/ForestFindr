@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7888efeb-7924-41e9-8d4f-181b06c7a9ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://forestfindr.cloudapp.net/Services/XAML.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="XAML.xsd" MetadataType="Schema" ID="0dd3c863-af1c-4b87-92ea-2a94cf6aadee" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?xsd=xsd2" />
+    <MetadataFile FileName="XAML1.xsd" MetadataType="Schema" ID="3483e472-3812-4f36-823f-427edf1e7f81" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?xsd=xsd1" />
+    <MetadataFile FileName="XAML2.xsd" MetadataType="Schema" ID="6a804998-b7b0-4c81-85c9-a2c3422abcd5" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?xsd=xsd0" />
+    <MetadataFile FileName="XAML.wsdl" MetadataType="Wsdl" ID="05255a80-2db3-4a63-b9ed-db953b3f6655" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?wsdl" />
+    <MetadataFile FileName="XAML.disco" MetadataType="Disco" ID="b9451f33-fed7-4681-932b-84e2453e583b" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?disco" />
+    <MetadataFile FileName="XAML3.xsd" MetadataType="Schema" ID="da24c178-cb38-4fc4-bc23-1cb0227bf05c" SourceId="1" SourceUrl="http://forestfindr.cloudapp.net/Services/XAML.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
